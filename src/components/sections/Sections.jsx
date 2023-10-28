@@ -5,7 +5,7 @@ import {
   CreateInputBtn,
 } from "../Index";
 import { useRef, useState } from "react";
-import SectionHeader from "./SectionHeader";
+// import SectionHeader from "./SectionHeader";
 
 const Sections = () => {
   const sectionRef = useRef(null);
@@ -34,8 +34,8 @@ const Sections = () => {
   return (
     <>
       <main className="border px-4 pb-4 text-sm my-5">
-        <SectionHeader
-          title={"Frontend web developer at Naprima Ideal Tech"}
+        <Header
+          headerTitle={"Frontend web developer at Naprima Ideal Tech"}
           date={"jul 2023 - Aug 2023"}
           onclick={() => toggleForm(sectionRef)}
         />

@@ -1,28 +1,45 @@
-import Title from "./Title";
+import MainLayout from "../layouts/MainLayout";
+import Title from "./child/Title";
 
 // Input
-import { Inputs } from "./inputs/Inputs";
-import InputField from "./inputs/InputField";
-import CreateInputBtn from "./inputs/CreateInputBtn";
-import CreateInputAction from "./inputs/CreateInputAction";
+import { Inputs } from "./child/Inputs";
+import InputField from "./child/InputField";
+import AddMoreBtn from "./child/AddMoreBtn";
+import CreateInputAction from "./child/CreateInputAction";
+import Quill from "./child/addMore/Quill";
+import Header from "./child/addMore/Header";
+import ToggleButton from "./personalDetails/skill/ToggleButton";
+
+// Functions
+import Helper from "./functions/Helper";
 
 // home screen
-import JobTitle from "./details/JobTitle";
-import Personaldetails from "./details/Personaldetails.jsx";
-import ProfessionalSummary from "./details/ProfessionalSummary";
-import EmploymentHistory from "./employmentHistory/EmploymentHistory";
-
-import Sections from "./sections/Sections";
+import JobTitle from "./child/JobTitle";
+import Details from "./personalDetails/Details";
+import ProfessionalSummary from "./personalDetails/ProfessionalSummary";
+import EmploymentHistory from "./personalDetails/EmploymentHistory";
+import Education from "./personalDetails/Education";
+import SocialLinks from "./personalDetails/SocialLinks";
+import Skills from "./personalDetails/skill/Skills";
+import Internship from "./personalDetails/Internship";
 
 export {
+  MainLayout,
   Title,
+  Header,
   Inputs,
   InputField,
-  CreateInputBtn,
+  AddMoreBtn,
   CreateInputAction,
+  ToggleButton,
+  Helper,
   JobTitle,
-  Personaldetails,
+  Details,
   ProfessionalSummary,
   EmploymentHistory,
-  Sections,
+  SocialLinks,
+  Education,
+  Skills,
+  Internship,
+  Quill,
 };

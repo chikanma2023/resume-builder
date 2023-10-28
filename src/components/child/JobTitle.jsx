@@ -1,17 +1,14 @@
 import { UserIcon } from "@heroicons/react/24/solid";
+import { InputField } from "../Index";
 
 const JobTitle = () => {
   return (
     <section className="flex flex-col-reverse items-start gap-5 lg:flex-row lg:items-center">
       <div className="w-full lg:w-1/2 flex flex-col gap-2 mb-3 text-sm">
-        <label htmlFor="" className="capitalize text-gray-400">
-          wanted job title
-        </label>
-        <input
-          type="text"
+        <InputField
+          type="type"
+          name="wanted job title"
           placeholder="eg: Frontend developer"
-          className="py-3 px-4 bg-blue-50 transition duration-300 ease-in-out 
-          focus:outline-none border-b-2 border-b-transparent focus:border-b-blue-500"
         />
       </div>
       <main className="w-full lg:w-1/2 hover:[&_*]:text-blue-600">
