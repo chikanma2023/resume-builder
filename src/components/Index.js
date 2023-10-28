@@ -43,5 +43,3 @@ export {
   Internship,
   Quill,
 };
-
-a;
