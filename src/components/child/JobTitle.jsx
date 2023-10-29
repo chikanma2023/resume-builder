@@ -1,5 +1,5 @@
 import { UserIcon } from "@heroicons/react/24/solid";
-import { InputField } from "../Index";
+import { InputField } from "../../components/personalDetails/Index";
 
 const JobTitle = () => {
   return (

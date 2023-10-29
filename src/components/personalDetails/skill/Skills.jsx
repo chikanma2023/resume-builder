@@ -5,8 +5,8 @@ import {
   Header,
   InputField,
   AddMoreBtn,
-  Helper,
-} from "../../Index";
+  toggleForm,
+} from "../Index";
 import SkillCard from "./SkillCard";
 
 const levels = [
@@ -41,9 +41,12 @@ const Skills = () => {
         <Header
           headerTitle={selected.title}
           text={selected.label}
-          onclick={() => Helper(formRef)}
+          onclick={() => toggleForm(formRef)}
         />
-        <div className="displayForm grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div
+          ref={formRef}
+          className="displayForm ease-in duration-300 grid grid-cols-1 gap-5 lg:grid-cols-2"
+        >
           <InputField
             type="text"
             name="skill"

@@ -8,13 +8,13 @@ import {
   SocialLinks,
   Skills,
   Internship,
-} from "./components/Index";
+} from "./components/personalDetails/Index";
 
 const App = () => {
   return (
-    <section className="container mx-auto px-5 py-10">
-      <div className="grid grid-col-1 gap-3 lg:grid-cols-2">
-        <main>
+    <section className="container mx-auto">
+      <div className="flex justify-between items-start">
+        <main className="w-1/2 bg-white px-5 py-10">
           <Title title="personal details" description="" />
           <JobTitle />
           <Details />
@@ -24,6 +24,11 @@ const App = () => {
           <SocialLinks />
           <Skills />
           <Internship />
+        </main>
+        <main className="w-1/2 p-5 flex flex-col justify-center bg-gray-500">
+          <section className="bg-white  rounded">
+            <p>Hart chikanma Justman</p>
+          </section>
         </main>
       </div>
     </section>

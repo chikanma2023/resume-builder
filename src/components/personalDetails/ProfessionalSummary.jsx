@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Title, Quill } from "../Index";
+import { Title, Quill } from "./Index";
 
 const ProfessionalSummary = () => {
   const [value, setValue] = useState("");

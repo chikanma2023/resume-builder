@@ -1,4 +1,4 @@
-import { InputField } from "../Index";
+import { InputField } from "./Index";
 
 const InputFields = [
   { type: "text", name: "first name", placeholder: "Eg: joe" },

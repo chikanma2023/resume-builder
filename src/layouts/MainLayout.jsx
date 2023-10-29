@@ -1,8 +1,8 @@
-import { Title } from "../components/Index";
+import { Title } from "../components/personalDetails/Index";
 
 const MainLayout = ({ title, description, children }) => {
   return (
-    <section className="my-20">
+    <section className="relative my-20">
       <Title title={title} description={description} />
       {children}
     </section>
