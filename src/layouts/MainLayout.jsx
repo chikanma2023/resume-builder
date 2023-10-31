@@ -1,11 +1,11 @@
-import { Title } from "../components/personalDetails/Index";
+import { Title } from "../components";
 
 const MainLayout = ({ title, description, children }) => {
   return (
-    <section className="relative my-20">
+    <main className="relative my-20">
       <Title title={title} description={description} />
       {children}
-    </section>
+    </main>
   );
 };
 
