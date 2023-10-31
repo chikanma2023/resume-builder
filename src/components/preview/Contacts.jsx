@@ -13,4 +13,3 @@ const Contacts = () => {
 };
 
 export default Contacts;
-aa;
