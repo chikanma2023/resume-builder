@@ -8,7 +8,6 @@ const INtership = () => {
       title="Internship"
       subTitle="frontend web development at naprima ideal"
       duration={"july 2023 - aug 2024"}
-      description={""}
     />
   );
 };

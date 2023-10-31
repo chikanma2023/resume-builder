@@ -13,10 +13,14 @@ import {
 
 // Preview
 import {
+  ProfileImage,
   Profile,
   Employmenthistory,
   EDucation,
   INtership,
+  Contacts,
+  Links,
+  Skill,
 } from "./components/preview/Index";
 
 const App = () => {
@@ -35,16 +39,19 @@ const App = () => {
           <Internship />
         </main>
         <main className="hidden fixed right-0 w-1/2 h-[100vh] py-5 px-20 lg:flex bg-gray-500">
-          <section className="bg-white  rounded min-h-[90vh] w-[100%] flex flex-col gap-4 py-10 px-5">
-            <main className="flex">
-              <div className="w-2/3 flex flex-col gap-4">
+          <section className="bg-white rounded min-h-[90vh] w-[100%] flex flex-col gap-4 py-10 px-5">
+            <ProfileImage />
+            <main className="flex gap-5">
+              <div className="w-2/3 flex flex-col gap-3">
                 <Profile />
                 <Employmenthistory />
                 <EDucation />
                 <INtership />
               </div>
-              <div className="p-10">
-                <p>data</p>
+              <div className="flex flex-col gap-3">
+                <Contacts />
+                <Links />
+                <Skill />
               </div>
             </main>
           </section>
