@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import ProfileImage from "./ProfileImage";
 import { Title, InputField } from "..";
-import { getPersonalDetails } from "../../Reducers/personalDetails";
+import { details } from "../../Reducers/personalDetails";
 
 const Index = () => {
   const dispatch = useDispatch();
   const [formValues, setFormValues] = useState([
     { type: "text", name: "firstname", placeholder: "Eg: joe" },
-    { type: "text", name: "last name", placeholder: "Eg: smith" },
+    { type: "text", name: "lastname", placeholder: "Eg: smith" },
     { type: "email", name: "email", placeholder: "Eg: joe@gmail.com" },
     { type: "tel", name: "phone", placeholder: "Eg: +123 90112233" },
     { type: "text", name: "country", placeholder: "Eg: Nigeria" },
@@ -20,8 +20,16 @@ const Index = () => {
     let currentInput = [...formValues];
     currentInput[index][name] = value;
     setFormValues(currentInput);
-    console.log(formValues);
-    dispatch(getPersonalDetails(formValues));
+    dispatch(
+      details({
+        firstname: formValues[0].firstname,
+        lastname: formValues[1].lastname,
+        email: formValues[2].email,
+        phone: formValues[3].phone,
+        country: formValues[4].country,
+        city: formValues[5].city,
+      })
+    );
   };
 
   return (

@@ -41,7 +41,7 @@ const ProfileImage = () => {
               src={formValues && formValues.profileImage}
               className={
                 formValues && formValues.profileImage
-                  ? "w-full h-full rounded"
+                  ? "w-full h-full rounded-2xl"
                   : "hidden"
               }
             />

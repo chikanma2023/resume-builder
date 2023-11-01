@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const Index = () => {
   const { value } = useSelector((state) => state.personalInfo);
+  // console.log(value);
 
   return (
     <div className="flex flex-col gap-10 text-xs mb-4 capitalize">
@@ -11,13 +12,14 @@ const Index = () => {
           <img
             src={value && value.profileImage}
             className={
-              value && value.profileImage ? "w-full h-full rounded" : "hidden"
+              value && value.profileImage
+                ? "w-full h-full rounded-2xl"
+                : "hidden"
             }
           />
         </div>
         <div className="text-black">
-          {/* Hart chikanma justman */}
-          {value && value.firstname}
+          {value && value.firstname} {value && value.lastname}
           <p className="text-xs text-gray-500 font-semibold">
             {value && value.jobTitle}
           </p>

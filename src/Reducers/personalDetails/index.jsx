@@ -9,11 +9,21 @@ const personalInfo = createSlice({
         ...state.value,
         jobTitle: action.payload.jobTitle,
         profileImage: action.payload.profileImage,
-        firstName: action.payload.firstname,
+      };
+    },
+    details: (state, action) => {
+      state.value = {
+        ...state.value,
+        firstname: action.payload.firstname,
+        lastname: action.payload.lastname,
+        email: action.payload.email,
+        phone: action.payload.phone,
+        country: action.payload.country,
+        city: action.payload.city,
       };
     },
   },
 });
 
-export const { getPersonalDetails } = personalInfo.actions;
+export const { getPersonalDetails, details } = personalInfo.actions;
 export default personalInfo.reducer;
