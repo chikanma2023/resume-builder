@@ -1,4 +1,4 @@
-const PreviewLayout = ({ icon, title, subTitle, duration, description }) => {
+const View = ({ icon, title, subTitle, duration, description }) => {
   return (
     <section className="flex flex-col gap-10 first-letter:capitalize">
       <main className="text-xs flex flex-col gap-1">
@@ -18,4 +18,4 @@ const PreviewLayout = ({ icon, title, subTitle, duration, description }) => {
   );
 };
 
-export default PreviewLayout;
+export default View;

@@ -1,9 +1,9 @@
 import { BriefcaseIcon } from "@heroicons/react/24/solid";
-import PreviewLayout from "../../layouts/PreviewLayout";
+import View from "../../layouts/View";
 
 const Index = () => {
   return (
-    <PreviewLayout
+    <View
       icon={<BriefcaseIcon className="w-3 h-3 text-black" />}
       title="Employment histtory"
       subTitle="fontend web developer at doncodes tech"

@@ -1,9 +1,9 @@
 import { UserGroupIcon } from "@heroicons/react/24/solid";
-import PreviewLayout from "../../layouts/PreviewLayout";
+import View from "../../layouts/View";
 
 const Index = () => {
   return (
-    <PreviewLayout
+    <View
       icon={<UserGroupIcon className="w-3 h-3 text-black" />}
       title="Internship"
       subTitle="frontend web development at naprima ideal"
