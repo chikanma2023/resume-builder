@@ -32,7 +32,7 @@ const App = () => {
           <Internship />
         </div>
         <div className="hidden fixed right-0 w-1/2 h-[100vh] py-5 px-20 lg:flex bg-gray-500">
-          <div className="bg-white rounded min-h-[90vh] w-[100%] flex flex-col gap-4 py-10 px-10">
+          <div className="bg-white rounded min-h-[90vh] w-[100%] flex flex-col gap-4 py-10 px-5">
             {/*  */}
             {templates[currentTemplate]}
           </div>

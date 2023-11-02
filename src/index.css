@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .rotateIcon {
   @apply transform hover:-rotate-180
         transition duration-150 ease-in-out;

@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import App from "./App.jsx";
 import "./index.css";
 
-import personalInfo from "./Reducers/personalDetails";
+import personalInfo from "./Reducers/personalDetailsActions";
 
 const store = configureStore({
   reducer: {

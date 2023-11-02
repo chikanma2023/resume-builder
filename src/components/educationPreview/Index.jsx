@@ -6,7 +6,7 @@ const Index = () => {
     <View
       icon={<BookOpenIcon className="w-3 h-3 text-black" />}
       title="Education"
-      description={
+      subTitle={
         "Studied computer science at michael okpara university of agriculture umudike."
       }
     />

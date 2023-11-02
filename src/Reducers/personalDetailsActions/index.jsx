@@ -4,14 +4,14 @@ const personalInfo = createSlice({
   name: "personalInfo",
   initialState: { value: {} },
   reducers: {
-    getPersonalDetails: (state, action) => {
+    getImageAction: (state, action) => {
       state.value = {
         ...state.value,
         jobTitle: action.payload.jobTitle,
         profileImage: action.payload.profileImage,
       };
     },
-    details: (state, action) => {
+    getPersonalDetails: (state, action) => {
       state.value = {
         ...state.value,
         firstname: action.payload.firstname,
@@ -22,8 +22,15 @@ const personalInfo = createSlice({
         city: action.payload.city,
       };
     },
+    getProfileInfo: (state, action) => {
+      state.value = {
+        ...state.value,
+        employmenthistory: action.payload.employmenthistory,
+      };
+    },
   },
 });
 
-export const { getPersonalDetails, details } = personalInfo.actions;
+export const { getImageAction, getPersonalDetails, getProfileInfo } =
+  personalInfo.actions;
 export default personalInfo.reducer;

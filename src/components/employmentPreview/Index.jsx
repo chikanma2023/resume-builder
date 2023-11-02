@@ -5,7 +5,7 @@ const Index = () => {
   return (
     <View
       icon={<BriefcaseIcon className="w-3 h-3 text-black" />}
-      title="Employment histtory"
+      title="Employment history"
       subTitle="fontend web developer at doncodes tech"
       duration={"july 2023 - aug 2024"}
       description={

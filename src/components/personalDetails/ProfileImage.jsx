@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { InputField } from "..";
-import { getPersonalDetails } from "../../Reducers/personalDetails";
+import { getImageAction } from "../../Reducers/personalDetailsActions";
 
 const ProfileImage = () => {
   const dispatch = useDispatch();
   const [formValues, setFormValues] = useState({});
 
+  // Get and dispatch user input
   const handleChangle = (event) => {
     if (event) {
       if (event.target.files) {
@@ -22,7 +23,7 @@ const ProfileImage = () => {
       }
     }
   };
-  dispatch(getPersonalDetails(formValues));
+  dispatch(getImageAction(formValues));
 
   return (
     <div className="flex flex-col-reverse items-start gap-5 lg:flex-row lg:items-center">
@@ -35,18 +36,21 @@ const ProfileImage = () => {
         />
       </div>
       <div className="w-full lg:w-1/2 hover:[&_*]:text-blue-600">
-        <div className="flex items-center gap-3 text-neutral-400 text-sm">
-          <div className="w-16 h-14 flex items-center justify-center rounded cursor-pointer bg-gray-100">
+        <label
+          htmlFor="ProfileImage"
+          className="flex items-center gap-3 text-neutral-400 cursor-pointer text-sm"
+        >
+          <div className="w-16 h-14 flex items-center justify-center rounded overflow-hidden  bg-gray-100">
             <img
               src={formValues && formValues.profileImage}
               className={
                 formValues && formValues.profileImage
-                  ? "w-full h-full rounded-2xl"
+                  ? "w-full h-full"
                   : "hidden"
               }
             />
           </div>
-          <label htmlFor="ProfileImage">
+          <div>
             <p>Upload photo</p>
             <input
               type="file"
@@ -54,8 +58,8 @@ const ProfileImage = () => {
               id="ProfileImage"
               onChange={(event) => handleChangle(event)}
             />
-          </label>
-        </div>
+          </div>
+        </label>
       </div>
     </div>
   );

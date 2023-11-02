@@ -1,9 +1,7 @@
-// import { UserIcon } from "@heroicons/react/24/solid";
 import { useSelector } from "react-redux";
 
 const Index = () => {
   const { value } = useSelector((state) => state.personalInfo);
-  // console.log(value);
 
   return (
     <div className="flex flex-col gap-10 text-xs mb-4 capitalize">
