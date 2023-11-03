@@ -16,7 +16,7 @@ const Index = () => {
   ]);
 
   // Get and dispatch user input
-  const getForminputs = (event, index) => {
+  const handleChange = (event, index) => {
     let { name, value } = event.target;
     let currentInput = [...formValues];
     currentInput[index][name] = value;
@@ -45,7 +45,7 @@ const Index = () => {
               type={input.type}
               name={input.name}
               placeholder={input.placeholder}
-              onchange={(event) => getForminputs(event, index)}
+              onchange={(event) => handleChange(event, index)}
             />
           </div>
         ))}

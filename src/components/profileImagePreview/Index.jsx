@@ -10,15 +10,13 @@ const Index = () => {
           <img
             src={value && value.profileImage}
             className={
-              value && value.profileImage
-                ? "w-full h-full rounded-2xl"
-                : "hidden"
+              value && value.profileImage ? "w-full h-full rounded" : "hidden"
             }
           />
         </div>
         <div className="text-black">
           {value && value.firstname} {value && value.lastname}
-          <p className="text-xs text-gray-500 font-semibold">
+          <p className="text-xs text-gray-400 font-semibold">
             {value && value.jobTitle}
           </p>
         </div>

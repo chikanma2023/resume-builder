@@ -22,7 +22,7 @@ const personalInfo = createSlice({
         city: action.payload.city,
       };
     },
-    getProfileInfo: (state, action) => {
+    professionSummaryAction: (state, action) => {
       state.value = {
         ...state.value,
         employmenthistory: action.payload.employmenthistory,
@@ -31,6 +31,6 @@ const personalInfo = createSlice({
   },
 });
 
-export const { getImageAction, getPersonalDetails, getProfileInfo } =
+export const { getImageAction, getPersonalDetails, professionSummaryAction } =
   personalInfo.actions;
 export default personalInfo.reducer;

@@ -1,4 +1,4 @@
-const View = ({ icon, title, subTitle, duration, description }) => {
+const ViewText = ({ icon, title, subTitle, duration, description }) => {
   return (
     <section className="flex flex-col gap-10 first-letter:capitalize">
       <main className="text-xs flex flex-col gap-1">
@@ -16,4 +16,4 @@ const View = ({ icon, title, subTitle, duration, description }) => {
   );
 };
 
-export default View;
+export default ViewText;

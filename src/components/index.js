@@ -15,6 +15,7 @@ import Internship from "./internship/Index";
 
 // Previews
 import ProfileImagePreview from "./profileImagePreview/Index";
+import ViewText from "./Atoms/ViewText";
 import Profile from "./profile/Profile";
 import EmploymentHistoryPreview from "./employmentPreview/Index";
 import EducationPreview from "./educationPreview/Index";
@@ -38,6 +39,7 @@ export {
   Skills,
   Internship,
   ProfileImagePreview,
+  ViewText,
   Profile,
   EmploymentHistoryPreview,
   EducationPreview,

@@ -1,9 +1,9 @@
 import { BookOpenIcon } from "@heroicons/react/24/solid";
-import View from "../../layouts/View";
+import { ViewText } from "../index";
 
 const Index = () => {
   return (
-    <View
+    <ViewText
       icon={<BookOpenIcon className="w-3 h-3 text-black" />}
       title="Education"
       subTitle={

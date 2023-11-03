@@ -8,7 +8,7 @@ const ProfileImage = () => {
   const [formValues, setFormValues] = useState({});
 
   // Get and dispatch user input
-  const handleChangle = (event) => {
+  const handleChange = (event) => {
     if (event) {
       if (event.target.files) {
         setFormValues({
@@ -32,7 +32,7 @@ const ProfileImage = () => {
           type="type"
           name="wanted job title"
           placeholder="eg: Frontend developer"
-          onchange={(event) => handleChangle(event)}
+          onchange={(event) => handleChange(event)}
         />
       </div>
       <div className="w-full lg:w-1/2 hover:[&_*]:text-blue-600">
@@ -56,7 +56,7 @@ const ProfileImage = () => {
               type="file"
               className="hidden"
               id="ProfileImage"
-              onChange={(event) => handleChangle(event)}
+              onChange={(event) => handleChange(event)}
             />
           </div>
         </label>
