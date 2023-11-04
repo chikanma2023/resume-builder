@@ -16,7 +16,7 @@ import Internship from "./internship/Index";
 // Previews
 import ProfileImagePreview from "./profileImagePreview/Index";
 import ViewText from "./Atoms/ViewText";
-import Profile from "./profile/Profile";
+import Profile from "./Profile/Index";
 import EmploymentHistoryPreview from "./employmentPreview/Index";
 import EducationPreview from "./educationPreview/Index";
 import InternshipPreview from "./internPreview/Index";

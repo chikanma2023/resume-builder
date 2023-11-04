@@ -17,21 +17,23 @@ const Index = () => {
 
   // Get and dispatch user input
   const handleChange = (event, index) => {
-    let { name, value } = event.target;
-    let currentInput = [...formValues];
-    currentInput[index][name] = value;
-    setFormValues(currentInput);
+    if (event) {
+      let { name, value } = event.target;
+      let currentInput = [...formValues];
+      currentInput[index][name] = value;
+      setFormValues(currentInput);
 
-    dispatch(
-      getPersonalDetails({
-        firstname: formValues[0].firstName,
-        lastname: formValues[1].lastName,
-        email: formValues[2].email,
-        phone: formValues[3].phone,
-        country: formValues[4].country,
-        city: formValues[5].city,
-      })
-    );
+      dispatch(
+        getPersonalDetails({
+          firstname: formValues[0].firstName,
+          lastname: formValues[1].lastName,
+          email: formValues[2].email,
+          phone: formValues[3].phone,
+          country: formValues[4].country,
+          city: formValues[5].city,
+        })
+      );
+    }
   };
 
   return (

@@ -1,28 +1,20 @@
-import {
-  Profile,
-  EmploymentHistoryPreview,
-  EducationPreview,
-  InternshipPreview,
-  Contacts,
-  SocialLinksPreview,
-} from "../../index";
+import { useSelector } from "react-redux";
+import TemplateOneHeader from "../../Atoms/template_one_header/Index";
+import { EmploymentHistoryPreview } from "../../index";
 
-export default function Template1() {
+const Template2 = () => {
+  const { value } = useSelector((state) => state.personalInfo);
+
   return (
-    <div>
-      <div className="flex gap-5">
-        template 2
-        <div className="w-2/3 flex flex-col gap-3">
-          <Profile />
+    <>
+      <TemplateOneHeader data={value} />
+      <div className="flex gap-5 text-xs">
+        <div className="w-2/3">
           <EmploymentHistoryPreview />
-          <EducationPreview />
-          <InternshipPreview />
-        </div>
-        <div className="flex flex-col gap-3">
-          <Contacts />
-          <SocialLinksPreview />
         </div>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Template2;

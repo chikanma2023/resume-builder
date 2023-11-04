@@ -1,10 +1,9 @@
-import { BriefcaseIcon } from "@heroicons/react/24/solid";
 import { ViewText } from "../index";
 
-const Index = () => {
+const Index = ({ icon }) => {
   return (
     <ViewText
-      icon={<BriefcaseIcon className="w-3 h-3 text-black" />}
+      icon={icon}
       title="Employment history"
       subTitle="fontend web developer at doncodes tech"
       duration={"july 2023 - aug 2024"}
