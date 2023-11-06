@@ -1,6 +1,6 @@
-const Index = ({ name, type, placeholder, onchange }) => {
+const Index = ({ name, type, placeholder, onchange, className }) => {
   return (
-    <div className="flex flex-col gap-2 mb-3 text-sm">
+    <div className={`flex flex-col gap-2 mb-3 text-sm ${className}`}>
       <label htmlFor="" className="capitalize text-gray-400">
         {name}
       </label>
