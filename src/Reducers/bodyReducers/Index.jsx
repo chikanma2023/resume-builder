@@ -23,4 +23,3 @@ const resumeBodyActions = createSlice({
 
 export const { education } = resumeBodyActions.actions;
 export default resumeBodyActions.reducer;
-aa;
