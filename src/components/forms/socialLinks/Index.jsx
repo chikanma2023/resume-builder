@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import MainLayout from "../../layouts/MainLayout";
-import { Header, InputField, Button } from "..";
-import toggleForm from "../../lib/Helper";
+import MainLayout from "../../../layouts/MainLayout";
+import { Header, InputField, Button } from "../..";
+import toggleForm from "../../../lib/Helper";
 
 const Index = () => {
   const formRef = useRef();

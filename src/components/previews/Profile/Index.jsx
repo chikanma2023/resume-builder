@@ -1,5 +1,5 @@
 import { UserIcon } from "@heroicons/react/24/solid";
-import ViewText from "../Atoms/ViewText";
+import ViewText from "../../Atoms/ViewText";
 
 const Index = ({ data }) => {
   return (

@@ -1,26 +1,26 @@
+import { useRef, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import { useDispatch } from "react-redux";
-import { useState, useRef } from "react";
-import MainLayout from "../../layouts/MainLayout";
-import { Header, InputField } from "..";
-import toggleForm from "../../lib/Helper";
-import { education } from "../../Reducers/bodyReducers/Index";
+import { Header, InputField } from "../..";
+import MainLayout from "../../../layouts/MainLayout";
+import toggleForm from "../../../lib/Helper";
+import { employmentHistoryAction } from "../../../Reducers/personalDetailsActions/index";
 
-const Education = () => {
+const Index = () => {
   const dispatch = useDispatch();
   const formRef = useRef(null);
   const [InputFields, setInputFields] = useState([
-    { type: "text", name: "school" },
-    { type: "text", name: "degree" },
+    { type: "text", name: "title" },
+    { type: "text", name: "employer" },
     { type: "date", name: "startDate" },
     { type: "date", name: "enddate" },
     { type: "text", name: "city" },
   ]);
 
   const info = {
-    school: InputFields[0].school,
-    degree: InputFields[1].degree,
+    title: InputFields[0].title,
+    employer: InputFields[1].employer,
     startDate: InputFields[2].startDate,
     enddate: InputFields[3].enddate,
     city: InputFields[4].city,
@@ -32,14 +32,18 @@ const Education = () => {
     getCurrentValue[index][name] = value;
     setInputFields(getCurrentValue);
 
-    dispatch(education(info));
+    dispatch(employmentHistoryAction(info));
   };
 
   const getDescription = (event) => {
-    dispatch(education({ ...info, description: event }));
+    dispatch(employmentHistoryAction({ ...info, description: event }));
   };
+
   return (
-    <MainLayout title="Education" description="Show your relevant experience">
+    <MainLayout
+      title="Employment history"
+      description="Show your relevant experience"
+    >
       <div className="border p-4">
         <Header
           headerTitle={"(Not specified)"}
@@ -81,4 +85,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default Index;

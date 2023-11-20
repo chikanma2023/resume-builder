@@ -7,9 +7,9 @@ const ViewText = ({ icon, title, subTitle, duration, description }) => {
           <b className="capitalize">{title}</b>
         </div>
         <div className="ms-5 first-letter:capitalize">
-          <div>{subTitle}</div>
-          <p className="capitalize text-neutral-500">{duration}</p>
-          <p className="first-letter:capitalize my-2">{description}</p>
+          <div className="capitalize">{subTitle}</div>
+          <div className="capitalize text-neutral-500">{duration}</div>
+          <div className="first-letter:capitalize my-2">{description}</div>
         </div>
       </div>
     </div>

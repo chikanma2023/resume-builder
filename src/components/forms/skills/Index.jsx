@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
-import MainLayout from "../../layouts/MainLayout";
-import { ToggleBtn, Header, InputField, Button } from "..";
+import MainLayout from "../../../layouts/MainLayout";
+import { ToggleBtn, Header, InputField, Button } from "../../index";
 import Card from "./Card";
-import toggleForm from "../../lib/Helper";
+import toggleForm from "../../../lib/Helper";
 
 const levels = [
   { id: 0, label: "novice", border: "none", bg: "bg-red-100" },

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const personalInfo = createSlice({
   name: "personalInfo",
   initialState: { value: {} },
@@ -35,9 +36,25 @@ const personalInfo = createSlice({
         };
       }
     },
+    employmentHistoryAction: (state, action) => {
+      if (action) {
+        state.value = {
+          ...state.value,
+          title: action.payload.title,
+          employer: action.payload.employer,
+          startDate: action.payload.startDate,
+          enddate: action.payload.enddate,
+          description: action.payload.description,
+        };
+      }
+    },
   },
 });
 
-export const { getImageAction, getPersonalDetails, professionSummaryAction } =
-  personalInfo.actions;
+export const {
+  getImageAction,
+  getPersonalDetails,
+  professionSummaryAction,
+  employmentHistoryAction,
+} = personalInfo.actions;
 export default personalInfo.reducer;

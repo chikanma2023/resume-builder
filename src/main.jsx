@@ -6,10 +6,12 @@ import App from "./App.jsx";
 import "./index.css";
 
 import personalInfo from "./Reducers/personalDetailsActions";
+import resumeBodyActions from "./Reducers/bodyReducers/Index";
 
 const store = configureStore({
   reducer: {
     personalInfo: personalInfo,
+    resumeBodyActions: resumeBodyActions,
   },
 });
 

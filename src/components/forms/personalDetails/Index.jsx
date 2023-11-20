@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import ProfileImage from "./ProfileImage";
-import { Title, InputField } from "..";
-import { getPersonalDetails } from "../../Reducers/personalDetailsActions";
+import { Title, InputField } from "../../index";
+import { getPersonalDetails } from "../../../Reducers/personalDetailsActions";
 
 const Index = () => {
   const dispatch = useDispatch();

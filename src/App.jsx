@@ -12,7 +12,7 @@ import Template2 from "./components/Templates/Template_2";
 import Template3 from "./components/Templates/Template_1";
 
 const App = () => {
-  const currentTemplate = "Template2";
+  const currentTemplate = "Template1";
 
   const templates = {
     Template1: <Template1 />,

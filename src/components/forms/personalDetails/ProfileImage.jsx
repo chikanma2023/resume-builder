@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { InputField } from "..";
-import { getImageAction } from "../../Reducers/personalDetailsActions";
+import { InputField } from "../../index";
+import { getImageAction } from "../../../Reducers/personalDetailsActions";
 
 const ProfileImage = () => {
   const dispatch = useDispatch();

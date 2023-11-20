@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
-import MainLayout from "../../layouts/MainLayout";
-import { Header, InputField, Reactquill, Button } from "..";
-import toggleForm from "../../lib/Helper";
+import MainLayout from "../../../layouts/MainLayout";
+import { Header, InputField, Reactquill, Button } from "../../index";
+import toggleForm from "../../../lib/Helper";
 
 const Index = () => {
   const formRef = useRef();
