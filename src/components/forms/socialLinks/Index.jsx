@@ -1,10 +1,32 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import MainLayout from "../../../layouts/MainLayout";
 import { Header, InputField, Button } from "../..";
 import toggleForm from "../../../lib/Helper";
+import { contacts } from "../../../Reducers/bodyReducers/Index";
 
 const Index = () => {
   const formRef = useRef();
+  const dispatch = useDispatch();
+
+  const [inputField, setInputField] = useState([
+    { type: "text", name: "label" },
+    { type: "text", name: "link" },
+  ]);
+
+  const handleChange = (event, index) => {
+    let { name, value } = event.target;
+    let getCurrentValue = [...inputField];
+    getCurrentValue[index][name] = value;
+    setInputField(getCurrentValue);
+
+    dispatch(
+      contacts({
+        label: inputField[0].label,
+        link: inputField[1].link,
+      })
+    );
+  };
 
   return (
     <MainLayout
@@ -14,24 +36,20 @@ const Index = () => {
     >
       <div className="border p-4 mb-3">
         <Header
-          headerTitle={"(Not specified)"}
+          headerTitle={inputField[1].link || "(Not specified)"}
           text={""}
           onclick={() => toggleForm(formRef)}
         />
         <main ref={formRef} className="displayForm ease-in-out duration-150">
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-            <InputField
-              type="text"
-              name="label"
-              placeholder=""
-              onchange={(e) => console.log(e.tagert.value)}
-            />
-            <InputField
-              type="text"
-              name="link"
-              placeholder=""
-              onchange={(e) => console.log(e.tagert.value)}
-            />
+            {inputField.map((input, index) => (
+              <InputField
+                key={index}
+                type={input.type}
+                name={input.name}
+                onchange={(event) => handleChange(event, index)}
+              />
+            ))}
           </div>
         </main>
       </div>

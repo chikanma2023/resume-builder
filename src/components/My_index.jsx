@@ -1,5 +1,17 @@
 import ViewText from "./Atoms/ViewText";
 import { UserIcon, BriefcaseIcon } from "@heroicons/react/24/solid";
+import { useSelector } from "react-redux";
+
+const SetInnerHTML = ({ className, text }) => {
+  return (
+    <p
+      className={className}
+      dangerouslySetInnerHTML={{
+        __html: text,
+      }}
+    ></p>
+  );
+};
 
 export const ProfileImage = ({ data }) => {
   return (
@@ -24,7 +36,7 @@ export const ProfileImage = ({ data }) => {
   );
 };
 
-export const Contacts = ({ data }) => {
+export const Contacts = ({ data, contacts }) => {
   return (
     <div className="flex flex-col gap-3 w-full text-xs">
       <p className="font-bold mb-1">Details</p>
@@ -35,77 +47,58 @@ export const Contacts = ({ data }) => {
         <p className="break-words text-blue-500">{data.email}</p>
       </div>
 
-      <div>
+      <div className="[&_p]:text-blue-500">
         <b className="mb-1">Links</b>
-        <p>{data.github}</p>
-        <p>{data.linkdin}</p>
+        <p>{contacts.link}</p>
+        <p>{contacts.label}</p>
       </div>
     </div>
   );
 };
 
 export const Header = ({ headerObject, bodyObject }) => {
+  const { contacts } = useSelector((state) => state.resumeBodyActions);
   return (
     <>
-      {/* Header */}
       <ProfileImage data={headerObject} />
       <div className="w-full flex gap-5">
         <div className="w-2/3 flex flex-col gap-3">
-          <ViewText // Profile preview
+          <ViewText //=============== Profile preview===============
             icon={<UserIcon className="w-3 h-3 text-black" />}
             title="Profile"
-            subTitle={
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: headerObject.professionalSummary,
-                }}
-              ></p>
-            }
+            subTitle={<SetInnerHTML text={headerObject.professionalSummary} />}
           />
 
-          {/* Body */}
-          <ViewText // Employment history preview
+          <ViewText //========== Employment history preview==========
             icon={<BriefcaseIcon className="w-3 h-3 text-black" />}
             title="Employment history"
-            subTitle={
-              <p
-                className="font-bold"
-                dangerouslySetInnerHTML={{
-                  __html: `${headerObject.title} at ${headerObject.employer}`,
-                }}
-              ></p>
-            }
             duration={`${headerObject.startDate} - ${headerObject.enddate}`}
-            description={
-              <p
-                dangerouslySetInnerHTML={{ __html: headerObject.description }}
-              ></p>
+            description={<SetInnerHTML text={headerObject.description} />}
+            subTitle={
+              <SetInnerHTML
+                className="font-bold"
+                text={`${headerObject.title} at ${headerObject.employer}`}
+              />
             }
           />
 
-          <ViewText // Education preview
+          <ViewText //============= Education preview=============
             icon={<BriefcaseIcon className="w-3 h-3 text-black" />}
             title="Education"
-            subTitle={
-              <p
-                className="font-bold"
-                dangerouslySetInnerHTML={{
-                  __html: `${bodyObject.degree}, ${bodyObject.school}`,
-                }}
-              ></p>
-            }
             duration={`${bodyObject.startDate} - ${bodyObject.enddate}`}
-            description={
-              <p
-                dangerouslySetInnerHTML={{ __html: bodyObject.description }}
-              ></p>
+            description={<SetInnerHTML text={bodyObject.description} />}
+            subTitle={
+              <SetInnerHTML
+                className="font-bold"
+                text={`${bodyObject.degree}, ${bodyObject.school}`}
+              />
             }
           />
         </div>
 
         {/* Contacts */}
         <div className="w-1/3 flex flex-col gap-3">
-          <Contacts data={headerObject} />
+          <Contacts data={headerObject} contacts={contacts} />
         </div>
       </div>
     </>

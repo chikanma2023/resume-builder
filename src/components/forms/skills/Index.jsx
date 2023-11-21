@@ -3,6 +3,8 @@ import MainLayout from "../../../layouts/MainLayout";
 import { ToggleBtn, Header, InputField, Button } from "../../index";
 import Card from "./Card";
 import toggleForm from "../../../lib/Helper";
+import { useDispatch } from "react-redux";
+import { skillsAction } from "../../../Reducers/bodyReducers/Index";
 
 const levels = [
   { id: 0, label: "novice", border: "none", bg: "bg-red-100" },
@@ -14,14 +16,21 @@ const levels = [
 
 const Index = () => {
   const formRef = useRef();
+  const dispatch = useDispatch();
+
   const [selected, setSeleceted] = useState({
     id: 0,
-    label: "novice",
+    level: "novice",
     title: "",
   });
 
   const indicator = (id, label) =>
     setSeleceted({ ...selected, id: id, label: label });
+
+  const handleChange = (event) => {
+    setSeleceted({ ...selected, title: event.target.value });
+    dispatch(skillsAction(selected));
+  };
 
   return (
     <MainLayout
@@ -46,11 +55,10 @@ const Index = () => {
             type="text"
             name="skill"
             placeholder=""
-            onchange={(e) =>
-              setSeleceted({ ...selected, title: e.target.value })
-            }
+            onchange={(event) => handleChange(event)}
           />
-          <main className="flex flex-col gap-0.5 justify-center">
+
+          <div className="flex flex-col gap-0.5 justify-center">
             <div className="flex gap-1 capitalize text-xs text-neutral-500">
               {"level"} - <p className="text-red-500">{selected.label}</p>
             </div>
@@ -71,7 +79,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-          </main>
+          </div>
         </div>
       </div>
       <Button
