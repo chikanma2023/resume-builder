@@ -16,16 +16,12 @@ const Index = ({ data }) => {
           {data.firstname} {data.lastname}
         </p>
         <div
-          className={
-            data.professionalSummary
-              ? "bg-neutral-100 rounded-2xl p-3"
-              : "hidden"
-          }
+          className={data.summary ? "bg-neutral-100 rounded-2xl p-3" : "hidden"}
         >
           <b className="text-[1.5em]">profile</b>
           <p
             className="mt-2"
-            dangerouslySetInnerHTML={{ __html: data.professionalSummary }}
+            dangerouslySetInnerHTML={{ __html: data.summary }}
           ></p>
         </div>
       </div>

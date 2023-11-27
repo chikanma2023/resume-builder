@@ -2,10 +2,10 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import { useDispatch } from "react-redux";
 import { useState, useRef } from "react";
-import MainLayout from "../../layouts/MainLayout";
-import { Header, InputField } from "..";
-import toggleForm from "../../lib/Helper";
-import { education } from "../../Reducers/bodyReducers/Index";
+import MainLayout from "../../../layouts/MainLayout";
+import { Header, InputField } from "../..";
+import toggleForm from "../../../lib/Helper";
+import { education } from "../../../Reducers/Index";
 
 const Education = () => {
   const dispatch = useDispatch();
@@ -18,13 +18,7 @@ const Education = () => {
     { type: "text", name: "city" },
   ]);
 
-  const info = {
-    school: InputFields[0].school,
-    degree: InputFields[1].degree,
-    startDate: InputFields[2].startDate,
-    enddate: InputFields[3].enddate,
-    city: InputFields[4].city,
-  };
+  const [data, setData] = useState({});
 
   const handleChange = (event, index) => {
     let { name, value } = event.target;
@@ -32,11 +26,27 @@ const Education = () => {
     getCurrentValue[index][name] = value;
     setInputFields(getCurrentValue);
 
-    dispatch(education(info));
+    setData({
+      school: InputFields[0].school,
+      degree: InputFields[1].degree,
+      startDate: InputFields[2].startDate,
+      enddate: InputFields[3].enddate,
+      city: InputFields[4].city,
+    });
+
+    dispatch(
+      education({
+        school: InputFields[0].school,
+        degree: InputFields[1].degree,
+        startDate: InputFields[2].startDate,
+        enddate: InputFields[3].enddate,
+        city: InputFields[4].city,
+      })
+    );
   };
 
   const getDescription = (event) => {
-    dispatch(education({ ...info, description: event }));
+    dispatch(education({ ...data, description: event }));
   };
   return (
     <MainLayout title="Education" description="Show your relevant experience">

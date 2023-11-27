@@ -4,7 +4,7 @@ import { ToggleBtn, Header, InputField, Button } from "../../index";
 import Card from "./Card";
 import toggleForm from "../../../lib/Helper";
 import { useDispatch } from "react-redux";
-import { skillsAction } from "../../../Reducers/bodyReducers/Index";
+import { skillsAction } from "../../../Reducers/Index";
 
 const levels = [
   { id: 0, label: "novice", border: "none", bg: "bg-red-100" },
@@ -24,8 +24,10 @@ const Index = () => {
     title: "",
   });
 
-  const indicator = (id, label) =>
-    setSeleceted({ ...selected, id: id, label: label });
+  const indicator = (id, label) => {
+    setSeleceted({ ...selected, id: id, level: label });
+    dispatch(skillsAction(selected));
+  };
 
   const handleChange = (event) => {
     setSeleceted({ ...selected, title: event.target.value });
@@ -44,7 +46,7 @@ const Index = () => {
       <div className="border p-4 mb-3">
         <Header
           headerTitle={selected.title}
-          text={selected.label}
+          text={selected.level}
           onclick={() => toggleForm(formRef)}
         />
         <div
@@ -60,7 +62,7 @@ const Index = () => {
 
           <div className="flex flex-col gap-0.5 justify-center">
             <div className="flex gap-1 capitalize text-xs text-neutral-500">
-              {"level"} - <p className="text-red-500">{selected.label}</p>
+              {"level"} - <p className="text-red-500">{selected.level}</p>
             </div>
             <div className="relative flex cursor-pointer rounded bg-red-50">
               {levels.map((level, index) => (
@@ -71,7 +73,7 @@ const Index = () => {
                       ? `w-20 h-11 py-2 flex items-center rounded transition duration-150 ease-in-out ${level.bg}`
                       : `w-20 h-11 py-2 flex items-center`
                   }
-                  onClick={() => indicator(level.id, level.label)}
+                  onMouseDown={() => indicator(level.id, level.label)}
                 >
                   <div
                     className={`h-1/2 ${level.border} border-r-red-500 z-30`}

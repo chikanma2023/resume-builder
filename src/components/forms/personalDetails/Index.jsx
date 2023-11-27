@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import ReactQuill from "react-quill";
 import ProfileImage from "./ProfileImage";
 import { Title, InputField } from "../../index";
-import { getPersonalDetails } from "../../../Reducers/personalDetailsActions";
+import { personalDetails } from "../../../Reducers/Index";
 
 const Index = () => {
   const dispatch = useDispatch();
+  const [summary, setSummary] = useState();
   const [formValues, setFormValues] = useState([
     { type: "text", name: "firstName", placeholder: "Eg: joe" },
     { type: "text", name: "lastName", placeholder: "Eg: smith" },
@@ -15,6 +17,8 @@ const Index = () => {
     { type: "text", name: "city", lable: "city", placeholder: "Eg: Umuahia" },
   ]);
 
+  const [data, setData] = useState({});
+
   // Get and dispatch user input
   const handleChange = (event, index) => {
     if (event) {
@@ -23,17 +27,32 @@ const Index = () => {
       currentInput[index][name] = value;
       setFormValues(currentInput);
 
+      setData({
+        firstname: formValues[0].firstName,
+        lastname: formValues[1].lastName,
+        email: formValues[2].email,
+        phone: formValues[3].phone,
+        country: formValues[4].country,
+        city: formValues[5].city,
+      });
+
       dispatch(
-        getPersonalDetails({
+        personalDetails({
           firstname: formValues[0].firstName,
           lastname: formValues[1].lastName,
           email: formValues[2].email,
           phone: formValues[3].phone,
           country: formValues[4].country,
           city: formValues[5].city,
+          summary,
         })
       );
     }
+  };
+
+  const getSummary = (event) => {
+    setSummary(event);
+    dispatch(personalDetails({ ...data, summary }));
   };
 
   return (
@@ -52,6 +71,26 @@ const Index = () => {
           </div>
         ))}
       </form>
+      <div>
+        <Title
+          title="Professional Summary"
+          description="Write 2-4 short & energetic sentences to interest the reader! Mention your 
+        role, experience & most importantly - your biggest achievements, best qualities and skills."
+        />
+        <ReactQuill
+          // value={value}
+          onChange={(event) => getSummary(event)}
+          modules={{
+            toolbar: [
+              [{ header: [1, 2, false] }],
+              ["bold", "italic", "underline"],
+              ["image", "code-block"],
+            ],
+          }}
+          theme="snow"
+          className="w-[100%] h-36 mb-20"
+        />
+      </div>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { InputField } from "../../index";
-import { getImageAction } from "../../../Reducers/personalDetailsActions";
+import { details } from "../../../Reducers/Index";
 
 const ProfileImage = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const ProfileImage = () => {
       }
     }
   };
-  dispatch(getImageAction(formValues));
+  dispatch(details(formValues));
 
   return (
     <div className="flex flex-col-reverse items-start gap-5 lg:flex-row lg:items-center">

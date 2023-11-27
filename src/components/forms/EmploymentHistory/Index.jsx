@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { Header, InputField } from "../..";
 import MainLayout from "../../../layouts/MainLayout";
 import toggleForm from "../../../lib/Helper";
-import { employmentHistoryAction } from "../../../Reducers/personalDetailsActions/index";
+import { emplomentHistory } from "../../../Reducers/Index";
 
 const Index = () => {
   const dispatch = useDispatch();
@@ -18,13 +18,7 @@ const Index = () => {
     { type: "text", name: "city" },
   ]);
 
-  const info = {
-    title: InputFields[0].title,
-    employer: InputFields[1].employer,
-    startDate: InputFields[2].startDate,
-    enddate: InputFields[3].enddate,
-    city: InputFields[4].city,
-  };
+  const [data, setData] = useState({});
 
   const handleChange = (event, index) => {
     let { name, value } = event.target;
@@ -32,11 +26,27 @@ const Index = () => {
     getCurrentValue[index][name] = value;
     setInputFields(getCurrentValue);
 
-    dispatch(employmentHistoryAction(info));
+    setData({
+      title: InputFields[0].title,
+      employer: InputFields[1].employer,
+      startDate: InputFields[2].startDate,
+      enddate: InputFields[3].enddate,
+      city: InputFields[4].city,
+    });
+
+    dispatch(
+      emplomentHistory({
+        title: InputFields[0].title,
+        employer: InputFields[1].employer,
+        startDate: InputFields[2].startDate,
+        enddate: InputFields[3].enddate,
+        city: InputFields[4].city,
+      })
+    );
   };
 
   const getDescription = (event) => {
-    dispatch(employmentHistoryAction({ ...info, description: event }));
+    dispatch(emplomentHistory({ ...data, description: event }));
   };
 
   return (

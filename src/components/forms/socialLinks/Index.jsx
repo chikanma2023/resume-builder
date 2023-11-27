@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import MainLayout from "../../../layouts/MainLayout";
 import { Header, InputField, Button } from "../..";
 import toggleForm from "../../../lib/Helper";
-import { contacts } from "../../../Reducers/bodyReducers/Index";
+import { contacts } from "../../../Reducers/Index";
 
 const Index = () => {
   const formRef = useRef();

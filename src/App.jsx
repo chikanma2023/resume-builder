@@ -1,6 +1,6 @@
 import {
   PersonalDetails,
-  ProfessionalSummary,
+  // ProfessionalSummary,
   EmploymentHistory,
   Education,
   SocialLinks,
@@ -12,7 +12,7 @@ import Template2 from "./components/Templates/Template_2";
 import Template3 from "./components/Templates/Template_1";
 
 const App = () => {
-  const currentTemplate = "Template1";
+  const currentTemplate = "Template2";
 
   const templates = {
     Template1: <Template1 />,
@@ -24,7 +24,7 @@ const App = () => {
       <div className="flex justify-between items-start">
         <div className="w-full bg-white px-5 py-10 lg:w-1/2">
           <PersonalDetails />
-          <ProfessionalSummary />
+          {/* <ProfessionalSummary /> */}
           <EmploymentHistory />
           <Education />
           <SocialLinks />

@@ -5,13 +5,13 @@ import { Provider } from "react-redux";
 import App from "./App.jsx";
 import "./index.css";
 
-import personalInfo from "./Reducers/personalDetailsActions";
-import resumeBodyActions from "./Reducers/bodyReducers/Index";
+// import personalInfo from "./Reducers/personalDetailsActions";
+import actions from "./Reducers/Index";
 
 const store = configureStore({
   reducer: {
-    personalInfo: personalInfo,
-    resumeBodyActions: resumeBodyActions,
+    // personalInfo: personalInfo,
+    actions: actions,
   },
 });
 
