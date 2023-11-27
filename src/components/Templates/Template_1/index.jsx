@@ -37,7 +37,7 @@ const Template1 = () => {
           <ViewText //=============== Profile preview===============
             icon={<UserIcon className="w-3 h-3 text-black" />}
             title="Profile"
-            subTitle={<SetInnerHTML text={details.summary} />}
+            description={<SetInnerHTML text={details.summary} />}
           />
 
           <ViewText //========== Employment history preview==========

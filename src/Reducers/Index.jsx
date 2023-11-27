@@ -60,6 +60,7 @@ const resumeBodyActions = createSlice({
         startDate: action.payload.startDate,
         enddate: action.payload.enddate,
         description: action.payload.description,
+        city: action.payload.city,
       };
     },
     education: (state, action) => {
@@ -71,6 +72,7 @@ const resumeBodyActions = createSlice({
           startDate: action.payload.startDate,
           enddate: action.payload.enddate,
           description: action.payload.description,
+          city: action.payload.city,
         };
       }
     },
@@ -103,6 +105,7 @@ const resumeBodyActions = createSlice({
           startDate: action.payload.startDate,
           enddate: action.payload.enddate,
           description: action.payload.description,
+          city: action.payload.city,
         };
       }
     },
